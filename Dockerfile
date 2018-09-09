@@ -1,9 +1,9 @@
 FROM php:7.0-apache-stretch
 RUN apt-get update \
         && apt-get install -y zip wget  \
-        && wget -P /tmp http://dl.cnezsoft.com/zentao/10.3/ZenTaoPMS.10.3.stable.zip \
+        && wget -O /tmp/zendao.zip https://sourceforge.net/projects/zentao/files/10.3/ZenTaoPMS.10.3.stable.zip/download \
         && cd /tmp  \
-        && unzip /tmp/ZenTaoPMS.10.3.stable.zip  \
+        && unzip /tmp/zendao.zip  \
         && mv -f zentaopms/ /var/www/html/  \
         && chmod o=rwx -R /var/www/html/zentaopms/tmp/  \
         && chmod o=rwx -R /var/www/html/zentaopms/www/data \
