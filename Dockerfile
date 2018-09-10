@@ -10,4 +10,4 @@ RUN apt-get update \
         && docker-php-ext-install pdo_mysql  \
         && cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini \
         && sed -i "s/;date.timezone =/date.timezone = Asia\/Shanghai/g" /usr/local/etc/php/php.ini \
-        && sed -i "s#;session.save_path = \"/tmp\"#session.save_path = \"/tmp\"#g" /usr/local/etc/php/php.ini
+        && sed -i "s#;session.save_path = \"/tmp\"#session.save_path = \"/var/www/html/zentaopms/tmp/\"#g" /usr/local/etc/php/php.ini
