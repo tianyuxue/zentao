@@ -4,7 +4,7 @@ RUN apt-get update \
         && wget -O /tmp/zendao.zip https://sourceforge.net/projects/zentao/files/10.3/ZenTaoPMS.10.3.stable.zip/download \
         && cd /tmp  \
         && unzip /tmp/zendao.zip  \
-        && mv -f zentaopms/ /var/www/html/  \
+        && mv -f zentaopms/www/* /var/www/html/  \
         && chmod o=rwx -R /var/www/html/zentaopms/tmp/  \
         && chmod o=rwx -R /var/www/html/zentaopms/www/data \
         && docker-php-ext-install pdo_mysql  \
